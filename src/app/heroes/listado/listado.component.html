@@ -1,0 +1,17 @@
+<p>Listado de Héroes</p>
+<ul>
+    <li *ngFor="let heroe of heroes; let i = index">{{ i }} - {{ heroe }}</li>
+<!-- http://movies.clubefl.gr/the-legend-of-tarzan-2/#.Yj5HHb3MLIV -->
+
+</ul>
+<div *ngIf="heroeBorrado !== ''; else noBorrado">
+    <h3>Heroe borrado</h3>
+    <span >{{this.heroeBorrado}}</span>
+</div>
+<ng-template #noBorrado>
+    <h3>No ha borrado nada.</h3>
+</ng-template>
+
+<button (click)="borrarHeroe()">
+    Borrar
+</button>
